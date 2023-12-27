@@ -1,27 +1,28 @@
 # PHD
 The dataset and code for paper: A New Benchmark and Reverse Validation Method for Passage-level Hallucination Detection (https://arxiv.org/abs/2310.06498), which has been accepted by EMNLP2023 findings.
 
-## Motivations for study
-LLMs tend to furnish users with comprehensive and informative answers instead of a single sentence. Hence, real-world applications often require passage-level hallucination detection rather than sentence-level detection.
+## Motivation for Study Passage-level Hallucination Detection
 Previous studies suffer from the following two disadvantages:
-- Relying on external retrieval modules. 
-Retrieval-Augmented Generation (RAG) is an effective strategy for mitigating hallucination. However, the retrieved knowledge does not always help and even has a negative impact as the retrieved context can be misleading. In addition, retrieving external knowledge often has complex processes and notable delays.
-- Only focusing on sentence-level hallucination detection.
-A self-check hallucination detection method can help RAG adaptively call for external resources.
-In many scenarios, a judgment about the entire passage is enough, which enables a quick decision on whether to activate the retrieval module and generate a new response.
+
+### Suffering from noise and counterfactual content
+Retrieval-Augmented Generation (RAG) is an effective strategy for mitigating hallucination. However, the retrieved knowledge does not always help and even has a negative impact as the retrieved context can be misleading. In addition, retrieving external knowledge often has complex processes and notable delays. A self-check hallucination detection method can help RAG adaptively call for external resources, enhancing the robustness of RAG.
+
+### Only focusing on sentence-level hallucination detection
+LLMs tend to furnish users with comprehensive and informative answers instead of a single sentence. Hence, real-world applications often require passage-level hallucination detection rather than sentence-level detection. In many scenarios, a judgment about the entire passage is enough, which enables a quick decision on whether to activate the retrieval module and generate a new response.
 
 
 
 ## Files
--  LMvsLM_replicate/*: this folder contains the replicate version of LMvsLM()
--  SelfCheckBERTScore/*:
--  Zero-shot_Baseline/*:
--  Reverse_Validation/*:
--  Ablation_Study_Llama2-7b/*:
--  Construct_benchmark/*:
+-  LMvsLM_replicate/*: We replicate LMvsLM (https://aclanthology.org/2023.emnlp-main.778/) and adapt it to passage-level hallucination detection.
+-  SelfCheckBERTScore/*: We use the implementation of SelfCheckGPT (https://github.com/potsawee/selfcheckgpt) released by the author.
+-  Zero-shot_Baseline/*: We prompt LLM to detect hallucination in a zero-shot fashion.
+-  Reverse_Validation/*: This folder contains the implementation of two variants of our RV method.
+-  Ablation_Study_Llama2-7b/*: This folder contains scripts for deploying **Llama-2-7b-chat-hf** API using Flask. 
+-  Construct_benchmark/*: This folder contains codes and record for crawling Google Browser return item, which can be used to expand the PHD benchmark.
 
 
-## How to use
+## Running Instruction
+
 
 
 
