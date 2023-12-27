@@ -2,6 +2,13 @@
 The dataset and code for paper: A New Benchmark and Reverse Validation Method for Passage-level Hallucination Detection (https://arxiv.org/abs/2310.06498), which has been accepted by EMNLP2023 findings.
 
 ## Motivations for study
+LLMs tend to furnish users with comprehensive and informative answers instead of a single sentence. Hence, real-world applications often require passage-level hallucination detection rather than sentence-level detection.
+Previous studies suffer from the following two disadvantages:
+- Relying on external retrieval modules. 
+Retrieval-Augmented Generation (RAG) is an effective strategy for mitigating hallucination. However, the retrieved knowledge does not always help and even has a negative impact as the retrieved context can be misleading. In addition, retrieving external knowledge often has complex processes and notable delays.
+- Only focusing on sentence-level hallucination detection.
+A self-check hallucination detection method can help RAG adaptively call for external resources.
+In many scenarios, a judgment about the entire passage is enough, which enables a quick decision on whether to activate the retrieval module and generate a new response.
 
 
 
