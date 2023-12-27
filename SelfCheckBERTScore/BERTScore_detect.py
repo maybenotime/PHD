@@ -34,7 +34,7 @@ for entry in tqdm(data):
             print("try again")
             time.sleep(3)
             
-    passage_score = sum(sen_scores_bertscore)/len(sen_scores_bertscore)         #大于0.5即为幻觉
+    passage_score = sum(sen_scores_bertscore)/len(sen_scores_bertscore)    
     print(float(passage_score))
     all_score.append(float(passage_score))
     
